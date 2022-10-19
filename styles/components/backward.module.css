@@ -1,0 +1,7 @@
+.default {
+	display: flex;
+}
+
+.default:hover {
+	color: rgba(52, 82, 254, 1);
+}
