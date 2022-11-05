@@ -13,7 +13,7 @@ const settings = {
 		type: {
 			type: "string",
 			description: "Выбор типа кнопки",
-			options: ["default", "hovered", "pressed"],
+			options: ["default", "pressed"],
 			control: { type: 'radio' }
 		},
 		prompt: {
@@ -30,7 +30,14 @@ const Basic = (args) => {
 	return <Button {...args}></Button >
 }
 
-export const Default = Basic.bind({});
-Default.args = {
+export const Square = Basic.bind({});
+Square.args = {
+	variant: "square",
+	prompt: "Подтвердить",
+};
+
+export const Rounded = Basic.bind({});
+Rounded.args = {
+	variant: "rounded",
 	prompt: "Подтвердить",
 };
