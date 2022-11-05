@@ -32,6 +32,7 @@ export const Button: React.FunctionComponent = (props: React.PropsWithChildren<B
 		>
 			<p className={styles["text"]}>{props.prompt}</p>
 			<Image src="/backward.svg" alt="backward" />
+			<p ></p>
 		</div>
 	)
 }

@@ -4,6 +4,12 @@ const settings = {
 	title: 'Button',
 	component: Button,
 	argTypes: {
+		variant: {
+			type: "string",
+			description: "Вариант внешнего вида кнопки",
+			options: ["square", "rounded"],
+			control: { type: 'radio' }
+		},
 		type: {
 			type: "string",
 			description: "Выбор типа кнопки",
@@ -14,7 +20,7 @@ const settings = {
 			type: "string",
 			name: "label",
 			defaultValue: "Кнопка"
-		}
+		},
 	},
 }
 
