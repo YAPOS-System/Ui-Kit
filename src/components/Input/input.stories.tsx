@@ -24,29 +24,44 @@ const settings = {
         },
         label:{
             type: "string",
+            description: "Загаловок поля ввода",
             name: "label",
             defaultValue: "Текст"
         },
         placeholder: {
             type: "string",
+            description: "Подсказка поля ввода",
             name: "placeholder",
             defaultValue: ""
         },
-        prompt: {
+        value: {
             type: "string",
-            name: "prompt",
+            description: "Значение поля ввода",
+            name: "value",
             defaultValue: ""
         },
+        error: {
+            type: "string",
+            description: "Текст ошибки поля ввода",
+            name: "error",
+            defaultValue: ""
+        },
+        maxLength: {
+            type: "number",
+            description: "Максимальная длина значения поля ввода",
+            name: "maxLength",
+            defaultValue: 0
+        }
     }
 }
 
 export default settings
 
-const Basic = (args) => {
+const Basic = (args:any) => {
     return <Input {...args}></Input>
 }
 
-export const Default = Basic.bind({});
+export const Default:any = Basic.bind({});
 Default.args = {
     variant: "default",
     state: "default",
@@ -55,7 +70,7 @@ Default.args = {
     placeholder: "Введите вашу фамилию",
 }
 
-export const Hover = Basic.bind({});
+export const Hover:any = Basic.bind({});
 Hover.args = {
     variant: "default",
     state: "hover",
@@ -64,16 +79,17 @@ Hover.args = {
     placeholder: "Введите вашу фамилию",
 }
 
-export const Error = Basic.bind({});
+export const Error:any = Basic.bind({});
 Error.args = {
     variant: "error",
     state: "hover",
     type: "text",
     label: "Ваша фамилия",
     placeholder: "Введите вашу фамилию",
+    error: "Пример ошибки",
 }
 
-export const Success = Basic.bind({});
+export const Success:any = Basic.bind({});
 Success.args = {
     variant: "success",
     state: "hover",
@@ -82,7 +98,7 @@ Success.args = {
     placeholder: "Введите вашу фамилию",
 }
 
-export const Disabled = Basic.bind({});
+export const Disabled:any = Basic.bind({});
 Disabled.args = {
     variant: "default",
     state: "disabled",
@@ -91,7 +107,7 @@ Disabled.args = {
     placeholder: "",
 }
 
-export const NoLabel = Basic.bind({});
+export const NoLabel:any = Basic.bind({});
 NoLabel.args = {
     variant: "default",
     state: "default",
@@ -99,4 +115,3 @@ NoLabel.args = {
     label: "",
     placeholder: "Введите вашу фамилию",
 }
-
