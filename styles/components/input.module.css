@@ -1,0 +1,50 @@
+/* label */
+
+.input__p{
+    margin-left: 20px;
+    color: rgba(135, 135, 135, 1);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 5px;
+}
+
+/* variant of input */
+
+.default{
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: 5px;
+    padding: 8px 20px;
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.07);
+    color: rgba(39, 39, 39, 1);
+    font-size: 12px;
+    font-weight: 400;
+    transition: box-shadow .3s,border .3s;
+}
+
+.default::placeholder{
+    color: rgba(39, 39, 39, 0.2);
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.default:disabled{
+    background-color: #fff;
+    border: 1px solid rgba(217, 217, 217, 1);
+    transition: .3s border;
+}
+
+.hover{
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.13);
+    transition: box-shadow .3s;
+}
+
+.error{
+    border: 1px solid rgba(199, 98, 99, 1);
+    transition: border .3s;
+}
+
+.success{
+    border: 1px solid rgba(52, 82, 254, 1);
+    transition: border .3s;
+}
