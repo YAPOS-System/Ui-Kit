@@ -9,12 +9,11 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Input
         label="Логин"
-        autoValidate={true}
         type='text'
+        maxLength={5}
       ></Input>
       <Input
         label="Пароль"
-        autoValidate={true}
         type='password'
       ></Input>
     </div>

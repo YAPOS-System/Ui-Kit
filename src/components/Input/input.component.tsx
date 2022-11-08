@@ -14,17 +14,11 @@ export interface InputPropsInterface {
     maxLength:number;
 }
 
-export const Input: React.FunctionComponent<InputPropsInterface> = (props: InputPropsInterface) => {
-    const [value,setValue] = useState( props.value );
+export const Input: React.FunctionComponent<InputPropsInterface> = (props) => {
     const [classes,setClasses] = useState( `${styles['default']}` );
 
-    const changeHandler = (e:any) => {
-        if(props.maxLength>=e.target.value.length||!props.maxLength)
-            setValue( e.target.value );
-    }
-
     const blurNandler = () => {
-        setClasses(`${props.variant == "error" ? styles['error'] : ''} ${props.variant == "success" ? styles['success'] : ''}`);
+        setClasses(`${props.variant == "error" || props.error ? styles['error'] : ''} ${props.variant == "success" || !props.error ? styles['success'] : ''}`);
     }
 
     return (
@@ -40,8 +34,9 @@ export const Input: React.FunctionComponent<InputPropsInterface> = (props: Input
                 className={`${styles['default']} ${props.state == "hover" ? styles['hover'] : ''} ${props.variant == "error" ? styles['error'] : ''} ${props.variant == "success" ? styles['success'] : ''} ${classes}`}
                 type={props.type}
                 placeholder={props.placeholder}
-                value={value||props.value}
-                onChange = {e => changeHandler(e)}
+                maxLength={props.maxLength}
+                value={props.value}
+                /*onChange = {e => changeHandler(e)}*/
                 onBlur = {() => blurNandler()}
                 disabled={props.state == "disabled"}
             >
@@ -56,6 +51,7 @@ export const Input: React.FunctionComponent<InputPropsInterface> = (props: Input
 }
 
 /* для обозначения типа в документации */
+
 Input.propTypes = {
     variant: PropTypes.oneOf([["default", "error", "success"]]),
     state: PropTypes.oneOf([["default", "hover", "disabled"]]),
