@@ -1,0 +1,95 @@
+.select{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  &__label{
+    font-size: 10px;
+    line-height: 1.7;
+    margin-bottom: 5px;
+    color: #535353;
+  }
+  &__body{
+    border: 1px solid #10243F;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+  &_active{
+    .select__icon{
+      transform: rotate(180deg);
+      path{
+        fill: #3452FE;
+      }
+    }
+  }
+  &_disable{
+    .select__label, .select__title{
+      color: #929292;
+    }
+    .select__body{
+      border: 1px solid #D9D9D9;
+    }
+    .select__title{
+      &:hover{
+        .select__icon{
+          path{
+            fill: #D9D9D9;
+          }
+        }
+      }
+    }
+    .select__icon{
+      path{
+        fill: #D9D9D9;
+      }
+    }
+  }
+  &__title{
+    cursor: pointer;
+    display: flex;
+    user-select: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 5px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #535353;
+    &:hover{
+      .select__icon{
+        path{
+          fill: #3452FE;
+        }
+      }
+    }
+  }
+  &__icon{
+    width:16px;
+    height: 16px;
+    flex: 0 0 16px;
+    path{
+      transition: 0.3s ease all;
+    }
+  }
+  &__list{
+    list-style: none;
+    margin:0;
+    padding: 10px 0 8px 15px;
+    border-top: 1px solid #10243F;
+  }
+  &__listItem{
+    font-size: 12px;
+    line-height: 1.7;
+    color: #929292;
+    transition: 0.3s ease all;
+    cursor: pointer;
+    margin-bottom:5px;
+    &:last-child{
+      margin:0;
+    }
+    &:hover{
+      color: #535353;
+    }
+    &_active{
+      color: #535353;
+    }
+  }
+}
